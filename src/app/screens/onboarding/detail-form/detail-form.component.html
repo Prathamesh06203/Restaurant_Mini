@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #3498db; /* A nice blue background color */
+            overflow: hidden; /* Hide the scrollbar */
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1; /* Send it to the back */
+        }
+        .background .blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .background .blob:hover {
+            transform: scale(1.1);
+        }
+        .restaurant-list {
+            position: relative;
+            z-index: 1; /* Bring it to the front */
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .restaurant-item {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Add a pointer cursor on hover */
+        }
+        .restaurant-item:hover {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .restaurant-item:hover .restaurant-details {
+            display: block;
+        }
+        .restaurant-details {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 250px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <div class="background">
+        <div class="blob"></div>
+        <div class="blob" style="top: 20%; left: 30%;"></div>
+        <div class="blob" style="top: 80%; left: 70%;"></div>
+        <div class="blob" style="top: 40%; left: 10%;"></div>
+        <div class="blob" style="top: 60%; left: 50%;"></div>
+    </div>
+    <div class="restaurant-list max-w-lg w-full">
+        <h1 class="text-3xl font-bold mb-4 text-center">Restaurant List</h1>
+        <ul>
+            <li class="restaurant-item">
+                <h2 class="text-2xl font-semibold">Restaurant 1</h2>
+                <p class="text-gray-700">Description of Restaurant 1</p>
+                <div class="restaurant-details">
+                    <p>Address: 123 Main St, Anytown, USA</p>
+                    <p>Phone: 555-555-5555</p>
+                    <p>Hours: Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 12pm-9pm</p>
+                </div>
+            </li>
+            <li class="restaurant-item">
+                <h2 class="text-2xl font-semibold">Restaurant 2</h2>
+                <p class="text-gray-700">Description of Restaurant 2</p>
+                <div class="restaurant-details">
+                    <p>Address: 456 Elm St, Othertown, USA</p>
+                    <p>Phone: 555-555-1234</p>
+                    <p>Hours: Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 12pm-9pm</p>
+                </div>
+            </li>
+            <li class="restaurant-item">
+                <h2 class="text-2xl font-semibold">Restaurant 3</h2>
+                <p class="text-gray-700">Description of Restaurant 3</p>
+                <div class="restaurant-details">
+                    <p>Address: 789 Oak St, Thistown, USA</p>
+                    <p>Phone: 555-555-5678</p>
+                    <p>Hours: Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 12pm-9pm</p>
+                </div>
+            </li>
+            <li class="restaurant-item">
+                <h2 class="text-2xl font-semibold">Restaurant 4</h2>
+                <p class="text-gray-700">Description of Restaurant 4</p>
+                <div class="restaurant-details">
+                    <p>Address: 789 Oak St, Thistown, USA</p>
+                    <p>Phone: 555-555-5678</p>
+                    <p>Hours: Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 12pm-9pm</p>
+                </div>
+            </li>
+            <li class="restaurant-item">
+                <h2 class="text-2xl font-semibold">Restaurant 5</h2>
+                <p class="text-gray-700">Description of Restaurant 5</p>
+                <div class="restaurant-details">
+                    <p>Address: 789 Oak St, Thistown, USA</p>
+                    <p>Phone: 555-555-5678</p>
+                    <p>Hours: Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 12pm-9pm</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
