@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { OnboardingRoutingModule } from './onboarding-routing.module';
 import { DetailFormComponent } from './detail-form/detail-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { DetailFormComponent } from './detail-form/detail-form.component';
   ],
   imports: [
     CommonModule,
-    OnboardingRoutingModule
+    OnboardingRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class OnboardingModule { }
