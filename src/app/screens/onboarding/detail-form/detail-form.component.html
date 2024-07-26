@@ -1,4 +1,4 @@
-<body class="bg-blue-600 overflow-hidden min-h-screen flex items-center justify-center">
+<div class="bg-blue-600 overflow-hidden min-h-screen flex items-center justify-center">
     <div class="absolute inset-0 flex justify-center items-center">
         <div class="absolute w-48 h-48 bg-purple-400 rounded-full shadow-lg transform scale-100 transition-transform duration-300 hover:scale-110 animate-pulse"></div>
         <div class="absolute w-40 h-40 bg-purple-400 rounded-full shadow-lg transform scale-100 transition-transform duration-300 hover:scale-110" style="top: 10%; left: 20%; animation: pulse 1.5s infinite ease-in-out;"></div>
@@ -10,40 +10,42 @@
     <div class="relative z-10 bg-white bg-opacity-80 p-6 rounded-lg shadow-lg max-w-lg w-full">
         <h1 class="text-3xl font-bold mb-4 text-center">Restaurant List</h1>
         <form [formGroup]="restroDetails" (ngSubmit)="displayRestroDetails()">
-            <label >Name : &nbsp;
-                <input id="restro-name" type="text" [formControl]="restroDetails.controls.name" class="bg-rose-300 border-l-gray-950 p-2 rounded-lg w-full" placeholder="Name">
+            <label class="block mb-2">Name:
+                <input id="restro-name" type="text" [formControl]="restroDetails.controls['name']" class="bg-rose-300 border-gray-300 p-2 rounded-lg w-full text-black" placeholder="Name">
             </label>
-            <label > Owner Name :
-                <input id="owner-name" type="text" [formControl]="restroDetails.controls.owner" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Owner">
+            <label class="block mb-2">Owner Name:
+                <input id="owner-name" type="text" [formControl]="restroDetails.controls['owner']" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Owner">
             </label>
-            <label >
-                <br>Address:  <br><br>
+            <label class="block mb-2">Type:
+                <input id="type" type="text" [formControl]="restroDetails.controls['type']" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Type (e.g., Dine-In, Takeaway)">
             </label>
-            <label >
-                Street :
-                <input id="Street" type="text" [formControl]="restroDetails.controls.address.controls.street" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Street">
+            <label class="block mb-2">Contact Details:
+                <input id="contact" type="text" [formControl]="restroDetails.controls['contact']" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Contact Details">
             </label>
-            <label >
-                City :
-                <input id="city" type="text" [formControl]="restroDetails.controls.address.controls.city" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="City">
+            <label class="block mb-2">Address:</label>
+            <label class="block mb-2">Street:
+                <input id="Street" type="text" [formControl]="restroDetails.controls['address'].controls['street']" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Street">
             </label>
-            <label >
-                Pin code :
-                <input id="zipcode" type="text" [formControl]="restroDetails.controls.address.controls.zipcode" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Pin Code">
-            </label> <br>
-
-            <br><button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Submit kar Do !</button>
+            <label class="block mb-2">City:
+                <input id="city" type="text" [formControl]="restroDetails.controls['address'].controls['city']" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="City">
+            </label>
+            <label class="block mb-2">Pin code:
+                <input id="zipcode" type="text" [formControl]="restroDetails.controls['address'].controls['zipcode']" class="bg-rose-300 p-2 rounded-lg w-full" placeholder="Pin Code">
+            </label>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg mt-4">Submit kar Do!</button>
         </form>
     </div>
 
-    <div *ngIf="submittedData" class="relative z-10 bg-white bg-opacity-80 p-6 rounded-lg shadow-lg max-w-lg w-full mt-6">
+    <div *ngIf="submittedData" class="relative z-10 bg-white bg-opacity-80 p-6 rounded-lg shadow-lg max-w-lg w-full mt-6 animate-fadeIn">
         <h1 class="text-3xl font-bold mb-4 text-center">Congratulations!</h1>
         <p class="text-xl">Restaurant Name: {{submittedData.name}}</p>
         <p class="text-xl">Owner Name: {{submittedData.owner}}</p>
+        <p class="text-xl">Type: {{submittedData.type}}</p>
+        <p class="text-xl">Contact Details: {{submittedData.contact}}</p>
         <p class="text-xl">Address:</p>
         <p class="text-xl">Street: {{submittedData.address.street}}</p>
         <p class="text-xl">City: {{submittedData.address.city}}</p>
         <p class="text-xl">Pin code: {{submittedData.address.zipcode}}</p>
         <p class="text-xl mt-4 text-green-600">Congratulations on submitting the details!</p>
     </div>
-</body>
+</div>

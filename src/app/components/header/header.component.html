@@ -1,1 +1,27 @@
-<p>header works!</p>
+
+<header class="bg-orange-500 py-2">
+    <div class="container mx-auto p-2 flex justify-between items-center">
+        <div class="flex items-center">
+            <h1 class="text-lg font-bold text-white">Tasty Bites</h1>
+        </div>
+        <nav class="flex items-center">
+            <ul class="flex items-center">
+                <li class="mr-4">
+                    <button routerLink="/onboarding/form" routerLinkActive="active" class="text-white hover:text-gray-200 transition duration-300">Home</button>
+                </li>
+                <li class="mr-4">
+                    <button routerLink="/onboarding/form" routerLinkActive="active" class="text-white hover:text-gray-200 transition duration-300">Form</button>
+                </li>
+                <li class="mr-4">
+                    <button routerLink="/auth/login" routerLinkActive="active" class="text-white hover:text-gray-200 transition duration-300">Login</button>
+                </li>
+                <li class="mr-4">
+                    <button routerLink="/auth/Registration" routerLinkActive="active" class="text-white hover:text-gray-200 transition duration-300">Regiester</button>
+                </li>
+            </ul>
+            <button class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-1 px-2 rounded-lg ml-2">
+                Book a Table
+            </button>
+        </nav>
+    </div>
+</header>
