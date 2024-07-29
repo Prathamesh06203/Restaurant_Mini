@@ -4,6 +4,7 @@ export class RestaurantRequest {
     city: string = "";
     type: string = "";
     contact: number = 0;
-    zipcode: number = 0;
+    zipCode: number = 0;
+    streetName: string = "";
   }
   

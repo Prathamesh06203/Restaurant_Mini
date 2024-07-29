@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { OnboardingRoutingModule } from './onboarding-routing.module';
 import { DetailFormComponent } from './detail-form/detail-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChildComponent } from './child/child.component';
 
 
 
 @NgModule({
   declarations: [
-    DetailFormComponent
+    DetailFormComponent,
+    ChildComponent
   ],
   imports: [
     CommonModule,

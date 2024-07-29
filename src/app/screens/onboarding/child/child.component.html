@@ -1,0 +1,14 @@
+<div *ngIf="submittedData" class="relative z-10 bg-white bg-opacity-95 p-6 rounded-lg shadow-lg max-w-lg w-full mt-6 animate-fadeIn">
+    <h1 class="text-3xl font-bold mb-4 text-center">🎉 Congratulations! 🎉</h1>
+    <p class="text-xl font-semibold mb-6 text-center text-violet-600">Thank You MR/MRS: {{ownerName}} 🥳 Please Check Your Email for Verification!!</p>
+    <p class="text-xl">Restaurant Name: {{submittedData.name}}</p>
+    <p class="text-xl">Owner Name: {{submittedData.owner}}</p>
+    <p class="text-xl">Type: {{submittedData.type}}</p>
+    <p class="text-xl">Contact Details: {{submittedData.contact}}</p>
+    <p class="text-xl">Address:</p>
+    <p class="text-xl">Street: {{submittedData.address.streetName}}</p>
+    <p class="text-xl">City: {{submittedData.address.city}}</p>
+    <p class="text-xl">Pin code: {{submittedData.address.zipCode}}</p>
+    <p class="text-xl mt-4 text-green-600 text-center">Congratulations on submitting the details! 🎊</p>
+  </div>
+  
