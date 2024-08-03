@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './screens/auth/auth.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { FrontComponent } from './screens/front/front.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FrontComponent
   ],
   imports: [
     BrowserModule,

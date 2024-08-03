@@ -3,8 +3,9 @@ export class RestaurantRequest {
     owner: string = "";
     city: string = "";
     type: string = "";
-    contact: number = 0;
-    zipCode: number = 0;
+    contact: string = "";
+    zipCode: string ="";
     streetName: string = "";
   }
+
   

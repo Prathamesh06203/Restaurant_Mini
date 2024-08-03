@@ -2,11 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthModule } from './screens/auth/auth.module';
+import { RestaurantDetailsComponent } from './screens/onboarding/restaurant-details/restaurant-details.component';
+import { FrontComponent } from './screens/front/front.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: FrontComponent
+  },
+  {
+    path: 'restaurant-details',
+    component: RestaurantDetailsComponent
   },
   {
     path: 'onboarding',
