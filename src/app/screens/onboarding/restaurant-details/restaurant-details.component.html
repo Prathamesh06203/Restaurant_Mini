@@ -1,0 +1,22 @@
+<div class="container mx-auto px-4">
+  <h1 class="text-4xl font-bold text-center mt-3 mb-8 text-green-400">List of Restaurants</h1>
+  <div *ngIf="restaurantDetails.length > 0; else noData" class="flex flex-wrap -mx-4">
+    <div *ngFor="let restaurant of restaurantDetails" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-6">
+      <div class="bg-purple-400 rounded-lg shadow-md p-6 transition-shadow hover:shadow-lg transform hover:scale-105 duration-300 ease-in-out text-black">
+        <h2 class="text-2xl font-bold mb-2">{{ restaurant.restroName }}</h2>
+        <p class="mb-1"><strong>Owner:</strong> {{ restaurant.ownerName }}</p>
+        <p class="mb-1"><strong>Type:</strong> {{ restaurant.restroType }}</p>
+        <p class="mb-4"><strong>Contact:</strong> {{ restaurant.contact }}</p>
+        <div>
+          <h3 class="text-xl font-semibold mb-1">Address</h3>
+          <p class="mb-1"><strong>Street:</strong> {{ restaurant.addressDetails.streetName }}</p>
+          <p class="mb-1"><strong>City:</strong> {{ restaurant.addressDetails.city }}</p>
+          <p class="mb-1"><strong>Pin Code:</strong> {{ restaurant.addressDetails.pinCode }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <p class="text-center">No restaurant details available.</p>
+  </ng-template>
+</div>
