@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
-# Updated UI (yet to be finalised):
+# Updated UI :
 ![Screenshot from 2024-08-03 12-36-30](https://github.com/user-attachments/assets/30afed60-4750-4d60-9d92-2aca673e6cbd)
 
 ![Screenshot from 2024-08-03 12-36-35](https://github.com/user-attachments/assets/55858a91-c6cf-49c2-bff1-0e524785a4ca)
