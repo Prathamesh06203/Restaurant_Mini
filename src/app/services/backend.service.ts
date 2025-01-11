@@ -1,43 +1,31 @@
-import { Injectable } from '@angular/core';
-import { RestaurantRequest } from '../model/RestaurantRequest';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { RestroList } from '../model/RestroList';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { RestaurantRequest } from "../models/RestaurantRequest";
+import { HttpHeaders } from "@angular/common/http";
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BackendService {
-  private baseUrl = 'https://5fef-2409-40c2-2046-90db-e98c-3094-383e-d17a.ngrok-free.app';
+  private baseUrl = 'http://localhost:8080/restro'; 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  onboardingRestaurant(restaurantRequest: RestaurantRequest): Observable<any> {
-    console.log(restaurantRequest);
-    return this.http.post(`${this.baseUrl}/restro/addNew`, restaurantRequest, {
-      responseType: 'json'
+  onboardRestaurant(restaurantRequest: RestaurantRequest): Observable<any> {
+    return this.http.post(`${this.baseUrl}/addNew`, restaurantRequest, {
+      responseType: 'text',
     });
   }
 
-  getRestaurants(): Observable<RestroList[]> {
-    return this.http.get<RestroList[]>(`${this.baseUrl}/restro/allRestro`, {
+  getAll(): Observable<RestaurantRequest[]> {
+    return this.http.get<RestaurantRequest[]>(`${this.baseUrl}/addNew`, {
+      responseType: 'json',
       headers: new HttpHeaders({
-        'ngrok-skip-browser-warning': 'true'
-      })
-    });
-  }
-  
-  registerUser(user: any): Observable<any> {
-    console.log('Register User Payload:', user); 
-    return this.http.post(`${this.baseUrl}/user/register`, user, {
-      responseType: 'json'
-    });
-  }
-  
-
-  login(credentials: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/user/login`, credentials, {
-      responseType: 'json'
+        'ngrok-skip-browser-warning': 'true', 
+      }),
     });
   }
 }
+

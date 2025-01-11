@@ -1,26 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { AuthModule } from './screens/auth/auth.module';
-import { RestaurantDetailsComponent } from './screens/onboarding/restaurant-details/restaurant-details.component';
-import { FrontComponent } from './screens/front/front.component';
+import { DetailFormComponent } from './screens/onboarding/detail-form/detail-form.component';
+import { ListRestoComponent } from './screens/list-resto/list-resto/list-resto.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: FrontComponent
-  },
-  {
-    path: 'restaurant-details',
-    component: RestaurantDetailsComponent
-  },
-  {
     path: 'onboarding',
-    loadChildren: () => import('./screens/onboarding/onboarding.module').then((module) => module.OnboardingModule)
+    component: DetailFormComponent
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./screens/auth/auth.module').then((module) => module.AuthModule)
+    path: 'home',
+    loadChildren: () => import('./screens/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'list-resto',
+    component: ListRestoComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 

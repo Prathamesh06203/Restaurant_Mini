@@ -1,2 +1,10 @@
 @tailwind base;
+@tailwind components;
 @tailwind utilities;
+
+.blurred-background{
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 80%;
+}

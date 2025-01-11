@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url('../../../../assets/bghome.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+@layer utilities {
+    .cream-500 {
+      background-color: #f5f5dc;
+    }
+    .hover\:cream-600:hover {
+      background-color: #f5deb3;
+    }
+  }
